@@ -73,13 +73,15 @@ def predict(closest_distances, choice):
     return prediction
     
 def knn_algorithm(x, y, n, query, choice_function='dominant'):
-    '''
+    '''Predicts query value based on nearest neighbours
+    
     Parameters
     ----------
-    x (pd.DataFrame) : training examples
-    y (pd.Series)    : prediction examples
-    n (int)          : k for KNN
-    query (pd.Series): set to predict 
+    x (pd.DataFrame) : training examples (numeric)
+    y (pd.Series)    : training labels
+    n (int)          : number of neighbours to consider
+    query (pd.Series): value set to predict 
+                       (same structure as x – training examples)
     choice_funtion (string)  : type of choice function for algorithm
     Returns
     -------
@@ -113,3 +115,5 @@ x_train, x_test, y_train, y_test = read_data('iris.data.csv')
 pred = knn_algorithm(x_train, y_train, 4, x_test.iloc[0], 
                      choice_function = 'dominant')
 print("\nPrediction for given query: {}".format(pred))
+
+help(knn_algorithm)
