@@ -116,4 +116,4 @@ pred = knn_algorithm(x_train, y_train, 4, x_test.iloc[0],
                      choice_function = 'dominant')
 print("\nPrediction for given query: {}".format(pred))
 
-help(knn_algorithm)
+
