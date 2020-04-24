@@ -90,7 +90,7 @@ def knn_algorithm(x, y, n, query, choice_function='dominant'):
     '''
 
     distances = []
-    # TODO speed iterations
+    
     for index, row in x.iterrows():
         distances.append(calc_distance(row, query))
     
